@@ -5,8 +5,16 @@ from ConfigurationServer import ConfigurationServer
 
 import random
 
-
-def triatgeDispatcher_logic(ADT_A01):
+#Van con valor por defecto xq son opcionales.
+def triatgeDispatcher_logic(
+						ADT_A01=None,
+						ADT_A03=None, 
+						ADT_A11=None, 
+						ADT_A13=None,
+						ADT_A31=None,
+						ADT_A34=None,
+						ADT_A40=None
+						  ):
 	#print "Hola!!"
 
 	response = ""
@@ -37,7 +45,16 @@ def triatgeDispatcher_init():
 
 	config.dispatcher.register_function('processHL7',triatgeDispatcher_logic,
 		returns = {'processHL7Return' : str},
-		args = { 'ADT_A01' : str }
+		args = { 
+			'ADT_A01' : str, 
+			'ADT_A03' : str, 
+			'ADT_A11' : str, 
+			'ADT_A13' : str, 
+			'ADT_A31' : str,
+			'ADT_A34' : str,
+			'ADT_A40' : str
+			 
+			 }
 
 #		args={'MSH' : 	{'MSH.1' : str,
 #				 'MSH.2' : str,
