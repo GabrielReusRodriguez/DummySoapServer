@@ -17,17 +17,16 @@ logging.basicConfig(filename=LOG_FILENAME,level=logging.DEBUG)
 
 print ("Init")
 
-#defaultConfig = DefaultDispatcher.defaultDispatcher_init()
+defaultConfig = DefaultDispatcher.defaultDispatcher_init()
 
-#threadManager = ThreadManager()
-#threadManager.defaultConfig = defaultConfig
-#ThreadManager.setDefaultThread(defaultConfig)
+threadManager = ThreadManager()
+ThreadManager.setDefaultThread(defaultConfig)
 
-#triatgeConfig = TriatgeWS.triatgeDispatcher_init()
-#ThreadManager.addThread(triatgeConfig)
+triatgeConfig = TriatgeWS.triatgeDispatcher_init()
+ThreadManager.addThread(triatgeConfig)
 
 
-#ThreadManager.startAllThreads()
+ThreadManager.startAllThreads()
 
 
 print ("Finish")
