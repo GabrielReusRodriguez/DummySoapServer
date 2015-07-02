@@ -1,5 +1,5 @@
 
-from pysimplesoap.server import SoapDispatcher, SOAPHandler
+from pysimplesoap.server import SoapDispatcher
 from ThreadManager import ThreadManager
 from ConfigurationServer import ConfigurationServer
 

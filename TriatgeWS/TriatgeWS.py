@@ -1,9 +1,10 @@
 
 from pysimplesoap.server import SoapDispatcher, SOAPHandler
-from ThreadManager import ThreadManager
 from ConfigurationServer import ConfigurationServer
 
+import Constants
 import random
+
 
 #Van con valor por defecto xq son opcionales.
 def triatgeDispatcher_logic(
@@ -17,12 +18,11 @@ def triatgeDispatcher_logic(
 						  ):
 	#print "Hola!!"
 
-	response = ""
 	fileName = ""
 	if random.randint(0,9) <= 4:
-		fileName = './TriatgeWS/resp_ack.xml'
+		fileName = Constants.HOME_DIR + '/TriatgeWS/responses/resp_ack.xml'
 	else:
-		fileName = './TriatgeWS/resp_ack_error.xml'
+		fileName = Constants.HOME_DIR + '/TriatgeWS/responses/resp_ack_error.xml'
 	f = open(fileName,"r")	
 	response = f.read()
 	f.close

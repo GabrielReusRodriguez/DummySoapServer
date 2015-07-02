@@ -1,5 +1,4 @@
 
-import ConfigurationServer
 
 class ThreadManager:
 	""" Clase encargada de gestionar los threads"""
@@ -38,6 +37,5 @@ class ThreadManager:
 
 	@staticmethod
 	def setDefaultThread(config):
-		ThreadManager.__defaultConfig = config	
- 
+		ThreadManager.__defaultConfig = config
 
