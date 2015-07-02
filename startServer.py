@@ -2,7 +2,7 @@
 
 
 from ThreadManager import ThreadManager
-#import ThreadManager
+# import ThreadManager
 from ConfigurationServer import ConfigurationServer
 import DefaultDispatcher
 import TriatgeWS
@@ -10,10 +10,10 @@ import logging
 
 
 
-#LOG_FILENAME = '/var/mail/pysimplesoap.server'
-#LOG_FILENAME = 'C:/Users/greusr/Desktop/borrame.txt'
+# LOG_FILENAME = '/var/mail/pysimplesoap.server'
+# LOG_FILENAME = 'C:/Users/greusr/Desktop/borrame.txt'
 LOG_FILENAME = './log/log.log'
-logging.basicConfig(filename=LOG_FILENAME,level=logging.DEBUG)
+logging.basicConfig(filename=LOG_FILENAME, level=logging.DEBUG)
 
 
 print ("Init")
