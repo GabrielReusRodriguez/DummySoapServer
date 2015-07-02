@@ -24,6 +24,7 @@ def triatgeDispatcher_logic(ADT_A01):
 def triatgeDispatcher_init():
 	config =  ConfigurationServer()
 	config.port = 8009
+	config.nombre = "triatgeWS"
 	config.dispatcher = SoapDispatcher(
 		'triatgeDispatcher',
 		location = "http://localhost:8009",

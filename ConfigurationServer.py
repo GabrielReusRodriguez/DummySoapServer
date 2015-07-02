@@ -13,6 +13,7 @@ class ConfigurationServer(threading.Thread):
 	        self.config = None
 	        self.port = None
 	        self.executing = False
+	        self.nombre = ""
 	        #super(self).__init__()
 	        threading.Thread.__init__(self)
 	        #super(StoppableThread,self).__init__()
@@ -31,10 +32,10 @@ class ConfigurationServer(threading.Thread):
 		#threading.Thread.__init__(self)
 		if self.dispatcher is not None:
 			self.executing = True
-			print ("Init thread")
+			print ("Init thread %s" % self.nombre)
 			self.server = HTTPServer(("",self.port),SOAPHandler)
 			self.server.dispatcher = self.dispatcher
-			print("Sirviendo")
+			print("Sirviendo %s" % self.nombre)
 			self.server.serve_forever()
 
 	def stop(self):
@@ -43,7 +44,7 @@ class ConfigurationServer(threading.Thread):
 #		self._stop.set()
 #		self.executing = False
 		#t = threading.Timer(60.0,pararServidor,["config"],{ arg: self})
-		t = threading.Timer(60.0,pararServidor,[self])
+		t = threading.Timer(5.0,pararServidor,[self])
 		t.start()
 	
 	def stopped(self):
@@ -62,5 +63,6 @@ class ConfigurationServer(threading.Thread):
 def pararServidor(config):
 	config.server.shutdown()
 	config.server.server_close()
+	print ("Servidor %s parado" % config.nombre)
 	#config._stop.set()
 	config.executing = False

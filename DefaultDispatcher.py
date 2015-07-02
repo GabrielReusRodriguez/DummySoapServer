@@ -18,6 +18,7 @@ def adder(a,b):
 def defaultDispatcher_init():
 	config =  ConfigurationServer()
 	config.port = 8008
+	config.nombre = "admin"
 	config.dispatcher = SoapDispatcher(
 		'my_dispatcher',
 		location = "http://localhost:8008",
