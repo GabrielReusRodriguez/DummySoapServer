@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import threading
-from pysimplesoap.pysimplesoap.server import SoapDispatcher, SOAPHandler
+from pysimplesoap.server import SoapDispatcher, SOAPHandler
 #from BaseHTTPServer import HTTPServer
 from http.server import HTTPServer
 
